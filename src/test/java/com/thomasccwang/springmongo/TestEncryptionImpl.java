@@ -1,6 +1,8 @@
-package com.thomasccwang.encryption;
+package com.thomasccwang.springmongo;
 
-public class TestEncryption implements Encryption {
+import com.thomasccwang.encryption.Encryption;
+
+public class TestEncryptionImpl implements Encryption {
 
     @Override
     public String encrypt(String plainText) {

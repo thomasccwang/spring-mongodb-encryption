@@ -1,4 +1,4 @@
-package com.thomasccwang.configuration;
+package com.thomasccwang.springmongo;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7,8 +7,6 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 import com.github.fakemongo.Fongo;
 import com.mongodb.Mongo;
-import com.thomasccwang.encryption.Encryption;
-import com.thomasccwang.encryption.TestEncryption;
 import com.thomasccwang.event.EncryptionMongoEventListener;
 
 @Configuration
@@ -32,13 +30,8 @@ public class FongoConfiguration extends AbstractMongoConfiguration {
     }
 
     @Bean
-    public Encryption getEncryption() {
-        return new TestEncryption();
-    }
-
-    @Bean
     public EncryptionMongoEventListener encryptionEventListener() {
-        return new EncryptionMongoEventListener(getEncryption());
+        return new EncryptionMongoEventListener(new TestEncryptionImpl());
     }
 
 }

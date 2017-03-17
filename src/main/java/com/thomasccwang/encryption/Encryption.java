@@ -4,5 +4,5 @@ public interface Encryption {
 
     String encrypt(String plainText);
 
-    String decrypt(String encrypted);
+    String decrypt(String cipher);
 }
