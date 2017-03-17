@@ -1,4 +1,4 @@
-package com.thomasccwang.event;
+package com.thomasccwang.springmongo.event;
 
 import java.lang.reflect.Field;
 
@@ -7,8 +7,8 @@ import org.springframework.util.ReflectionUtils;
 import org.springframework.util.ReflectionUtils.FieldCallback;
 
 import com.mongodb.DBObject;
-import com.thomasccwang.annotation.PersistEncrypted;
-import com.thomasccwang.encryption.Encryption;
+import com.thomasccwang.springmongo.annotation.PersistEncrypted;
+import com.thomasccwang.springmongo.encryption.Encryption;
 
 class EncryptCallback implements FieldCallback {
 

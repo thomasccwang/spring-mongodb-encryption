@@ -1,6 +1,6 @@
-package com.thomasccwang.model;
+package com.thomasccwang.springmongo.model;
 
-import com.thomasccwang.annotation.PersistEncrypted;
+import com.thomasccwang.springmongo.annotation.PersistEncrypted;
 
 public class CreditCard {
 

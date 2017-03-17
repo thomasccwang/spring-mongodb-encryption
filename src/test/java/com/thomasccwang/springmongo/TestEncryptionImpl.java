@@ -1,6 +1,6 @@
 package com.thomasccwang.springmongo;
 
-import com.thomasccwang.encryption.Encryption;
+import com.thomasccwang.springmongo.encryption.Encryption;
 
 public class TestEncryptionImpl implements Encryption {
 

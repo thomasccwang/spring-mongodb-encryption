@@ -14,9 +14,9 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
-import com.thomasccwang.model.CreditCard;
-import com.thomasccwang.model.Customer;
-import com.thomasccwang.repository.CustomerRepository;
+import com.thomasccwang.springmongo.model.CreditCard;
+import com.thomasccwang.springmongo.model.Customer;
+import com.thomasccwang.springmongo.repository.CustomerRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @Import(FongoConfiguration.class)
@@ -55,7 +55,7 @@ public class SpringMongoEncryptionTest {
     public void testFieldEncryptedInMongo() {
         Customer customer = repository.save(createCustomer());
 
-        DBCollection dbCollection = mongo.getDB("foo").getCollection("customer");
+        DBCollection dbCollection = getCustomerCollection();
         DBObject query = new BasicDBObject("firstName", "John");
         DBObject dbCustomer = dbCollection.findOne(query);
         String encryptedEmail = "foo" + customer.getEmail();
@@ -67,7 +67,7 @@ public class SpringMongoEncryptionTest {
         Customer customer = repository.save(createCustomer());
         CreditCard card = customer.getCreditCard();
 
-        DBCollection dbCollection = mongo.getDB("foo").getCollection("customer");
+        DBCollection dbCollection = getCustomerCollection();
         DBObject query = new BasicDBObject("firstName", "John");
         DBObject dbCustomer = dbCollection.findOne(query);
         DBObject dbCard = (DBObject) dbCustomer.get("creditCard");
@@ -84,5 +84,10 @@ public class SpringMongoEncryptionTest {
                 .creditCard(card)
                 .build();
         return customer;
+    }
+
+    @SuppressWarnings("deprecation")
+    private DBCollection getCustomerCollection() {
+        return mongo.getDB("foo").getCollection("customer");
     }
 }

@@ -1,4 +1,4 @@
-package com.thomasccwang.annotation;
+package com.thomasccwang.springmongo.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

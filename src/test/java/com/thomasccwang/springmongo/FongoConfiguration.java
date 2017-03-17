@@ -7,10 +7,10 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 import com.github.fakemongo.Fongo;
 import com.mongodb.Mongo;
-import com.thomasccwang.event.EncryptionMongoEventListener;
+import com.thomasccwang.springmongo.event.EncryptionMongoEventListener;
 
 @Configuration
-@EnableMongoRepositories("com.thomasccwang.repository")
+@EnableMongoRepositories("com.thomasccwang.springmongo.repository")
 public class FongoConfiguration extends AbstractMongoConfiguration {
 
     @Override
@@ -26,7 +26,7 @@ public class FongoConfiguration extends AbstractMongoConfiguration {
 
     @Override
     protected String getMappingBasePackage() {
-        return "com.thomasccwang.model";
+        return "com.thomasccwang.springmongo.model";
     }
 
     @Bean

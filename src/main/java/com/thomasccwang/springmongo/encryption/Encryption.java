@@ -1,4 +1,4 @@
-package com.thomasccwang.encryption;
+package com.thomasccwang.springmongo.encryption;
 
 public interface Encryption {
 

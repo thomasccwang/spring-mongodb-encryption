@@ -1,4 +1,4 @@
-package com.thomasccwang.event;
+package com.thomasccwang.springmongo.event;
 
 import org.springframework.data.mongodb.core.mapping.event.AbstractMongoEventListener;
 import org.springframework.data.mongodb.core.mapping.event.AfterConvertEvent;
@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.event.BeforeSaveEvent;
 import org.springframework.util.ReflectionUtils;
 
 import com.mongodb.DBObject;
-import com.thomasccwang.encryption.Encryption;
+import com.thomasccwang.springmongo.encryption.Encryption;
 
 /**
  * Register as a Bean with a Spring Data MongoDB configuration to enable encryption on fields.

@@ -1,8 +1,8 @@
-package com.thomasccwang.model;
+package com.thomasccwang.springmongo.model;
 
 import org.springframework.data.annotation.Id;
 
-import com.thomasccwang.annotation.PersistEncrypted;
+import com.thomasccwang.springmongo.annotation.PersistEncrypted;
 
 public class Customer {
 
