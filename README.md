@@ -10,15 +10,18 @@ Note: this project does not include any specific implementation of encryption al
 
 When properly set up, developers chose which fields to encrypt when documents are saved to MongoDB by simply adding annotation to document classes:
 
+```
 class Foo {
   private String name;
   @PersistEncrypted
   private String sensitiveData;
   ...
 }
+```
 
 Encrypting fields of sub-documents is easy. Simply annotate the member in the parent class, and then annotate the fields that need to be encrypted of the sub-document class:
 
+```
 class Foo {
   private String name;
   @PersistEncrypted
@@ -34,5 +37,5 @@ class Bar {
   private String moreSensitiveData;
   ...
   }
+  ```
   
-  https://github.com/thomasccwang/spring-mongodb-encryption/blob/master/src/main/java/com/thomasccwang/springmongo/encryption/Encryption.java
