@@ -16,4 +16,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'springmongo'
+rootProject.name = 'spring-mongodb-encryption'
