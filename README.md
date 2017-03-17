@@ -6,8 +6,6 @@ There is an open jira ticket (https://jira.spring.io/browse/DATAMONGO-874) to re
 
 By utilizing Spring's field reflections and Spring Data MongoDB's event listeners, it is possible to specify fields to be encrypted when persisted in MongoDB using annotations.
 
-Note: this project does not include any specific implementation of encryption algorithm. Simply implement the Encryption interface using a desired encryption algorithm.
-
 When properly set up, developers chose which fields to encrypt when documents are saved to MongoDB by simply adding annotation to document classes:
 
 ```
@@ -36,6 +34,20 @@ class Bar {
   @PersistEncrypted
   private String moreSensitiveData;
   ...
-  }
-  ```
-  
+}
+```
+
+A document in mongo would look like:
+```
+{
+  name: "james",
+  sensitiveData: "***",
+  bar: {
+         type: "fizz",
+         moreSensitiveData: "***"
+       }
+}
+```
+where the ```***``` is the encrypted value.
+
+
