@@ -13,15 +13,15 @@ public class TestEncryptionImpl implements Encryption {
     }
 
     @Override
-    public String decrypt(String encrypted) {
-        if (encrypted == null) {
+    public String decrypt(String cipher) {
+        if (cipher == null) {
             return null;
         }
-        if (!encrypted.startsWith("foo")) {
+        if (!cipher.startsWith("foo")) {
             // incorrect "encryption"
-            return encrypted;
+            return cipher;
         }
-        return encrypted.substring(3);
+        return cipher.substring(3);
     }
 
 }
