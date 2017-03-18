@@ -50,4 +50,6 @@ A document in mongo would look like:
 ```
 where the ```***``` is the encrypted value.
 
-
+Usage:
+1. Implement Encryption interface
+2. Register the EncryptionMongoEventListener as a Bean in the Spring Configuration class
